@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>746C6F57-3196-4CB9-9067-3DD220367C06</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CB974F6-E09F-460F-ACFC-941302A1B9F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8CB974F6-E09F-460F-ACFC-941302A1B9F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B1CB4A9-5B4E-49A0-84EA-2E76330DE70C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Horst Gutmann</string>
+	<key>description</key>
+	<string>Helper for managing a user's launchctl services</string>
+	<key>name</key>
+	<string>Launchctl</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>l/</string>
+				<key>script</key>
+				<string>import launchctl
+
+print(launchctl.list_services('{query}'))</string>
+				<key>title</key>
+				<string>List services</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>746C6F57-3196-4CB9-9067-3DD220367C06</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Service Operation</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5B1CB4A9-5B4E-49A0-84EA-2E76330DE70C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>import launchctl
+
+print (launchctl.execute('{query}'))</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8CB974F6-E09F-460F-ACFC-941302A1B9F6</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>5B1CB4A9-5B4E-49A0-84EA-2E76330DE70C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>746C6F57-3196-4CB9-9067-3DD220367C06</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8CB974F6-E09F-460F-ACFC-941302A1B9F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/zerok/alfred-launchctl-workflow</string>
+</dict>
+</plist>
